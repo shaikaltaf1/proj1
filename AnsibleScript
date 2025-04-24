@@ -1,0 +1,22 @@
+---
+- name: Installing java and jenkins
+  hosts: localhost
+  become: true
+  tasks:
+    - name: java and jenkins
+      script: localhost.sh
+
+- name: Installing java and kubernetes inside KM machine
+  hosts: KM
+  become: true
+  tasks:
+    - name: java and kubernetes
+      script: km.sh
+
+- name: Installing kubernetes inside slave machine K-S1 and K-S2
+  hosts: KS
+  become: true
+  tasks:
+    - name: K8
+      script: ks.sh
+~                    
